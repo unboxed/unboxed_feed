@@ -12,7 +12,8 @@ module UnboxedBlog
 			title = node.xpath('title').text
 			link = node.xpath('link/@href').text
 			author = node.xpath('author/name').text
-			ContentItem.where(url: link).first_or_create(url: link, title: title, author: author, category: 'blog')
+			time = DateTime.parse(node.xpath('published').text)
+			ContentItem.where(url: link).first_or_create(url: link, title: title, author: author, published_at: time, category: 'blog')
 		end
 	end
 end

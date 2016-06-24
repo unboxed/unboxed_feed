@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624125906) do
+ActiveRecord::Schema.define(version: 20160624140701) do
 
   create_table "content_items", force: :cascade do |t|
     t.string   "url"
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "category"
     t.text     "body"
     t.string   "image_url"
     t.string   "author"
+    t.datetime "published_at"
   end
 
 end
