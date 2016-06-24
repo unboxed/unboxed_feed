@@ -11,7 +11,8 @@ module UnboxedBlog
 		doc.xpath('//entry').each do |node|
 			title = node.xpath('title').text
 			link = node.xpath('link/@href').text
-			ContentItem.where(url: link).first_or_create(url: link, title: title, category: 'blog')
+			author = node.xpath('author/name').text
+			ContentItem.where(url: link).first_or_create(url: link, title: title, author: author, category: 'blog')
 		end
 	end
 end
