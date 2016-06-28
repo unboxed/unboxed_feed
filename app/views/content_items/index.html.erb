@@ -1,9 +1,13 @@
-<h1>Unboxed Feed</h1>
-<% @content_items.each do |item| %>
-	<% if item.category == 'tweet' %>
-		<%= item.published_at %>: <%= link_to item.title, item.url %> - <%= item.category %>, <%= link_to "@#{item.author}", "https://twitter.com/#{item.author}" %>
-	<% else %>
-		<%= item.published_at %>: <%= link_to item.title, item.url %> - <%= item.category %>, <%= item.author %>
+<div class="menu">
+	<h1>unboxed feed</h1>
+</div>
+<div class="feed">
+	<% @content_items.each do |item| %>
+		<% if item.category == 'tweet' %>
+			<%= item.published_at %>: <%= link_to item.title, item.url %> - <%= item.category %>, <%= link_to "@#{item.author}", "https://twitter.com/#{item.author}" %>
+		<% else %>
+			<%= item.published_at %>: <%= link_to item.title, item.url %> - <%= item.category %>, <%= item.author %>
+		<% end %>
+		<br/>
 	<% end %>
-	<br/>
-<% end %>
+</div>
