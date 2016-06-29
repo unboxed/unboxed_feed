@@ -6,23 +6,26 @@
 </div>
 <div class="feed">
 	<% @content_items.each_with_index do |item, index| %>
-		<div class="item">
-			<div class="item-image">
+		<%= link_to item.url do %>
+			<div class="<%= item_class(index) %>">
+				<div class="item-image">
+					<% if item_class(index) == 'item-large' %>
+						<div class="item-info-top">
+							<span class="category"><%= item.category.capitalize %></span>
+							<p class="title"><%= item.title %></p>
+						</div>
+					<% end %>
+				</div>
+					<div class="item-info">
+						<% if item.category === 'tweet' %>
+							<p class="category"><%= item.category.capitalize %></p>
+						<% else %>
+							<p class="category"><%= item.category.capitalize %></p>
+							<p class="title"><%= item.title %></p>
+						<% end %>
+					</div>
 			</div>
-			<div class="item-info">
-				<% if item.category === 'tweet' %>
-					<p class="category"><%= item.category.capitalize %></p>
-					<p>
-						<%= link_to 'link', item.url %>
-					</p>
-				<% else %>
-					<p class="category"><%= item.category.capitalize %></p>
-					<p>
-						<%= link_to 'link', item.url %>
-					</p>
-				<% end %>
-			</div>
-		</div>
+		<% end %>
 	<% end %>
 </div>
 

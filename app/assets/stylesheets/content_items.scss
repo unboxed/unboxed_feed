@@ -13,6 +13,10 @@ body {
 	font-weight: 300;
 }
 
+a {
+	color: #000000;
+}
+
 .menu {
 	float: left;
 	width: 15%;
@@ -30,7 +34,7 @@ body {
 }
 
 .feed {
-	float: left;
+	float: right;
 	width: 85%;
 }
 
@@ -42,11 +46,20 @@ body {
 	background-color: #efefef;
 }
 
+.item:hover {
+	.item-image {
+		height: 205px;
+	}
+	.item-info {
+		height: 139px;
+	}
+}
+
 .item-medium {
 	float: right;
 	width: 440px;
 	height: 350px;
-	padding: 2px;
+	padding: 3px;
 	background-color: #efefef;
 }
 
@@ -54,36 +67,71 @@ body {
 	float: right;
 	width: 660px;
 	height: 350px;
-	padding-left: 2px;
+	padding: 3px;
 	background-color: #efefef;
-}
-
-@media (max-width: 1000px) {
-	.item-large {
-		width: 500px;
+	position: relative;
+	.item-info {
+		display: none;
+	}
+	.item-image {
+		height: 344px;
 	}
 }
 
+@media (max-width: 792px) {
+	.item-large {
+		width: 440px;
+	}
+}
 
 @media (max-width: 675px) {
 	.item-large {
-		width: 250px;
+		width: 220px;
 	}
 }
 
 .item-image {
-	background-color: red;
-	height: 250px;
+	background-color: #8A2D8E;
+	height: 240px;
 	margin-bottom: none;
 }
 
 .item-info {
-	height: 94px;
+	height: 104px;
 	background-color: #ffffff;
 	padding-top: 10px;
 	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.item-info-top {
+	position: absolute;
+	left: 12px;
+	bottom: 10px;
+
+	.category {
+		color: #ffffff;
+		background-color: #444641;
+		padding: 3px 6px 3px 6px;
+		font-weight: 400;
+	}
+
+	.title {
+		color: #ffffff;
+		background-color: #444641;
+		padding: 3px 6px 3px 6px;
+		margin-top: 10px;
+		margin-right: 12px;
+	}
 }
 
 .category {
 	margin-top: 0;
+	font-weight: 400;
 }
+
+.title {
+	font-size: 0.8em;
+	margin-top: -10px;
+}
+
