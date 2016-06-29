@@ -2,12 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* {
+    box-sizing: border-box;
+}
+
 .menu {
 	float: left;
-	width: 25%;
+	width: 15%;
 }
 
 .feed {
 	float: right;
-	width: 75%;
+	width: 85%;
+}
+
+.item-alt {
+	float: right;
+	width: 250px;
+	height: 350px;
+	border: 1px solid;
 }

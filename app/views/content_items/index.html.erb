@@ -3,11 +3,19 @@
 </div>
 <div class="feed">
 	<% @content_items.each do |item| %>
-		<% if item.category == 'tweet' %>
-			<%= item.published_at %>: <%= link_to item.title, item.url %> - <%= item.category %>, <%= link_to "@#{item.author}", "https://twitter.com/#{item.author}" %>
-		<% else %>
-			<%= item.published_at %>: <%= link_to item.title, item.url %> - <%= item.category %>, <%= item.author %>
-		<% end %>
-		<br/>
+		<div class="item-alt">
+			<% if item.category === 'tweet' %>
+				<p><%= link_to item.title, item.url %></p>
+				<p><%= item.category %></p>
+				<p><%= link_to "@#{item.author}", "https://twitter.com/#{item.author}" %></p>
+				<p><%= item.published_at %></p>
+			<% else %>
+				<p><%= link_to item.title, item.url %></p>
+				<p><%= item.category %></p>
+				<p><%= item.author %></p>
+				<p><%= item.published_at %></p>
+			<% end %>
+		</div>
 	<% end %>
 </div>
+
