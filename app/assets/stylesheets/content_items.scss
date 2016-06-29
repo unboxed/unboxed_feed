@@ -16,9 +16,18 @@
 	width: 85%;
 }
 
-.item-alt {
+.item {
 	float: right;
 	width: 250px;
 	height: 350px;
-	border: 1px solid;
+	padding: 2px;
+}
+
+.item-image {
+	background-color: red;
+	height: 250px;
+}
+
+.item-info {
+	height: 100px;
 }
