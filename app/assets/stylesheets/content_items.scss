@@ -46,6 +46,12 @@ a {
 	background-color: #efefef;
 }
 
+@media (max-width: 480px) {
+	.item {
+		width: 80%;
+	}
+}
+
 .item:hover {
 	.item-image {
 		height: 205px;
@@ -87,6 +93,12 @@ a {
 @media (max-width: 675px) {
 	.item-large {
 		width: 220px;
+	}
+}
+
+@media (max-width: 480px) {
+	.item-large {
+		width: 80%;
 	}
 }
 
