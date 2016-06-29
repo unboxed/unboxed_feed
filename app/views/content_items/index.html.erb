@@ -1,19 +1,22 @@
 <div class="menu">
-	<h1>unboxed feed</h1>
+	<p>
+		unboxed<br/>
+		<span class="large-text">feed</span>
+	</p>
 </div>
 <div class="feed">
-	<% @content_items.each do |item| %>
+	<% @content_items.each_with_index do |item, index| %>
 		<div class="item">
 			<div class="item-image">
 			</div>
 			<div class="item-info">
 				<% if item.category === 'tweet' %>
-					<h4><%= item.category %></h4>
+					<p class="category"><%= item.category.capitalize %></p>
 					<p>
 						<%= link_to 'link', item.url %>
 					</p>
 				<% else %>
-					<h4><%= item.category %></h4>
+					<p class="category"><%= item.category.capitalize %></p>
 					<p>
 						<%= link_to 'link', item.url %>
 					</p>

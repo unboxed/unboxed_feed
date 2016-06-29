@@ -2,32 +2,88 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+
 * {
     box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 }
 
 .menu {
 	float: left;
 	width: 15%;
+	padding-left: 7px;
+}
+
+.large-text {
+	font-size: 5em;
+}
+
+@media (max-width: 900px) {
+	.large-text {
+		font-size: 3.5em;
+	}
 }
 
 .feed {
-	float: right;
+	float: left;
 	width: 85%;
 }
 
 .item {
 	float: right;
-	width: 250px;
+	width: 220px;
+	height: 350px;
+	padding: 3px;
+	background-color: #efefef;
+}
+
+.item-medium {
+	float: right;
+	width: 440px;
 	height: 350px;
 	padding: 2px;
+	background-color: #efefef;
+}
+
+.item-large {
+	float: right;
+	width: 660px;
+	height: 350px;
+	padding-left: 2px;
+	background-color: #efefef;
+}
+
+@media (max-width: 1000px) {
+	.item-large {
+		width: 500px;
+	}
+}
+
+
+@media (max-width: 675px) {
+	.item-large {
+		width: 250px;
+	}
 }
 
 .item-image {
 	background-color: red;
 	height: 250px;
+	margin-bottom: none;
 }
 
 .item-info {
-	height: 100px;
+	height: 94px;
+	background-color: #ffffff;
+	padding-top: 10px;
+	padding-left: 7px;
+}
+
+.category {
+	margin-top: 0;
 }
