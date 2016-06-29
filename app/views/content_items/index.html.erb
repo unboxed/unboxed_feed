@@ -12,7 +12,7 @@
 					<% if item_class(index) == 'item-large' %>
 						<div class="item-info-top">
 							<span class="category"><%= item.category.capitalize %></span>
-							<p class="title"><%= item.title %></p>
+							<p class="title-top"><%= item.title.truncate_words(10) %></p>
 						</div>
 					<% end %>
 				</div>
@@ -21,6 +21,7 @@
 							<p class="category"><%= item.category.capitalize %></p>
 						<% else %>
 							<p class="category"><%= item.category.capitalize %></p>
+							<p class="title-trunc"><%= item.title.truncate_words(10) %></p>
 							<p class="title"><%= item.title %></p>
 						<% end %>
 					</div>

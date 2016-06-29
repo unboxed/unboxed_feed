@@ -59,6 +59,12 @@ a {
 	.item-info {
 		height: 139px;
 	}
+	.title-trunc {
+		display: none;
+	}
+	.title {
+		display: block;
+	}
 }
 
 .item-medium {
@@ -128,7 +134,8 @@ a {
 		font-weight: 400;
 	}
 
-	.title {
+	.title-top {
+		font-size: 0.8em;
 		color: #ffffff;
 		background-color: #444641;
 		padding: 3px 6px 3px 6px;
@@ -142,8 +149,13 @@ a {
 	font-weight: 400;
 }
 
-.title {
+.title,
+.title-trunc {
 	font-size: 0.8em;
 	margin-top: -10px;
+}
+
+.title {
+	display: none;
 }
 
