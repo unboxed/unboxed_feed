@@ -54,10 +54,10 @@ a {
 
 .item:hover {
 	.item-image {
-		height: 205px;
+		height: 195px;
 	}
 	.item-info {
-		height: 139px;
+		height: 149px;
 	}
 	.title-trunc {
 		display: none;
@@ -110,16 +110,17 @@ a {
 
 .item-image {
 	background-color: #8A2D8E;
-	height: 240px;
+	height: 220px;
 	margin-bottom: none;
 }
 
 .item-info {
-	height: 104px;
+	height: 124px;
 	background-color: #ffffff;
 	padding-top: 10px;
 	padding-left: 7px;
 	padding-right: 7px;
+	position: relative;
 }
 
 .item-info-top {
@@ -152,10 +153,31 @@ a {
 .title,
 .title-trunc {
 	font-size: 0.8em;
-	margin-top: -10px;
+	margin-top: -12px;
 }
 
 .title {
 	display: none;
 }
 
+.tags {
+	margin-top: -10px;
+	position: absolute;
+	bottom: -7px;
+}
+
+.tag {
+	color: #ffffff;
+	background-color: #444641;
+	font-size: 0.6em;
+	padding: 2px 4px 2px 4px;
+	margin-right: 5px;
+}
+
+.tag-light {
+	background-color: #ffffff;
+	color: #444641;
+	font-size: 0.6em;
+	padding: 2px 4px 2px 4px;
+	margin-right: 5px;
+}

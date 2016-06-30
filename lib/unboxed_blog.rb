@@ -12,8 +12,13 @@ module UnboxedBlog
 			title = node.xpath('title').text
 			link = node.xpath('link/@href').text
 			author = node.xpath('author/name').text
+			tags = JSON.parse(node.xpath('tags').text)
 			time = DateTime.parse(node.xpath('published').text)
-			ContentItem.where(url: link).first_or_create(url: link, title: title, author: author, published_at: time, category: 'blog')
+			item = ContentItem.where(url: link).first_or_create(url: link, title: title, author: author, published_at: time, category: 'blog')
+			tags.each do |tag|
+				item.tag_list.add(tag)
+			end
+			item.save
 		end
 	end
 end
