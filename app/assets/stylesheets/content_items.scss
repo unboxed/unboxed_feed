@@ -181,3 +181,39 @@ a {
 	padding: 2px 4px 2px 4px;
 	margin-right: 5px;
 }
+
+.tweet-image {
+	height: 177px;
+	background-color: #9ae8f4;
+	/*position: relative;*/
+	position: relative;
+}
+
+.tweet-image a {
+	text-decoration: none;
+}
+
+.tweet-info {
+	/*position: absolute;*/
+	/*bottom: 0px;*/
+	padding-top: 5px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.tweet-info .text {
+	font-size: 0.8em;
+}
+
+.author {
+	font-size: 0.8em;
+	padding: 2px 4px 2px 0px;
+	position: absolute;
+	bottom: 0px;
+	padding-left: 7px;
+}
+
+.author a:hover {
+	color: #ffffff;
+	background-color: #000000;
+}
