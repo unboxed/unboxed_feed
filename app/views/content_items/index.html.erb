@@ -5,26 +5,62 @@
 	</p>
 </div>
 <div class="feed">
-	<% @content_items.each_with_index do |item, index| %>
-		<%= link_to item.url do %>
-			<% if item.category == "tweet" %>
-				<div class="item">
-					<div class="tweet-image">
-						<div class="tweet-info">
-							<p class="category"><%= item.category.capitalize %></p>
-							<p class="text"><%= item.title %></p>
+	<% @content_items.in_groups_of(2, false) do |group| %>
+		<% if all_tweets(group) %>
+			<!-- put in partial -->	
+			<div class="item">
+				<% group.each do |tweet| %>
+					<%= link_to tweet.url do %>
+						<% if tweet.image_url %>
+							<div class="tweet-image-small" style="background-image: url('<%= tweet.image_url %>');">
+							<div class="tweet-image-darken">
+						<% else %>
+							<div class="tweet-image-small">
+						<% end %>
+								<div class="tweet-info">
+									<p class="category"><%= tweet.category.capitalize %></p>
+									<p class="text"><%= tweet.title.html_safe %></p>
+								</div>
+								<p class="author"><%= link_to "@#{tweet.author}", "https://twitter.com/#{tweet.author}" %></p>
+							</div>
+						<% if tweet.image_url %>
+							</div>
+						<% end %>
+					<% end %>
+				<% end %>
+			</div>
+			<!-- finish partial -->
+		<% else %>
+			<% group.each do |item| %>
+				<%= link_to item.url do %>
+					<!-- put in partial -->
+					<% if item.category == "tweet" %>
+						<div class="item">
+							<% if item.image_url %>
+								<div class="tweet-image" style="background-image: url('<%= item.image_url %>');">
+								<div class="tweet-image-large-darken">
+							<% else %>
+								<div class="tweet-image">
+							<% end %>
+								<div class="tweet-info">
+									<p class="category"><%= item.category.capitalize %></p>
+									<p class="text"><%= item.title.html_safe %></p>
+								</div>
+								<p class="author"><%= link_to "@#{item.author}", "https://twitter.com/#{item.author}" %></p>
+							</div>
+						<% if item.image_url %>
+							</div>
+						<% end %>
 						</div>
-						<p class="author"><%= link_to "@#{item.author}", "https://twitter.com/#{item.author}" %></p>
-					</div>
-				</div>
-			<% else %>
-				<div class="<%= item_class(index) %>">
-					<div class="item-image">
-						<% if item_class(index) == 'item-large' %>
-							<div class="item-info-top">
-								<span class="category"><%= item.category.capitalize %></span>
-								<p class="title-top"><%= item.title %></p>
-								<p class="tags-light">
+					<% else %>
+						<div class="item">
+							<div class="item-image">
+							</div>
+							<div class="item-info">
+								<p class="category"><%= item.category.capitalize %></p>
+								<p class="title-trunc"><%= item.title.truncate_words(10) %></p>
+								<p class="title"><%= item.title.html_safe %></p>
+								<p class="tags">
 									<% item.tag_list.each do |tag| %>
 										<span class="tag">
 											<%= tag %>
@@ -32,21 +68,10 @@
 									<% end %>
 								</p>
 							</div>
-						<% end %>
-					</div>
-					<div class="item-info">
-						<p class="category"><%= item.category.capitalize %></p>
-						<p class="title-trunc"><%= item.title.truncate_words(10) %></p>
-						<p class="title"><%= item.title %></p>
-						<p class="tags">
-							<% item.tag_list.each do |tag| %>
-								<span class="tag">
-									<%= tag %>
-								</span>
-							<% end %>
-						</p>
-					</div>
-				</div>
+						</div>
+					<% end %>
+					<!-- finish partial -->
+				<% end %>
 			<% end %>
 		<% end %>
 	<% end %>

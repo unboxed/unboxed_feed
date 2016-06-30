@@ -15,7 +15,13 @@ module UnboxedTwitter
 				retweeted = true
 			end
 
-			ContentItem.where(url: link).first_or_create(url: link, title: text, author: user.screen_name, published_at: created_at, category: 'tweet')
+			item = ContentItem.where(url: link).first_or_create(url: link, title: text, author: user.screen_name, published_at: created_at, category: 'tweet')
+
+			if tweet.media.first
+				image_url = tweet.media.first.media_url.to_s
+				item.update(image_url: image_url)
+				item.save
+			end
 		end
 	end
 end

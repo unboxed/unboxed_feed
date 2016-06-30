@@ -7,4 +7,8 @@ module ContentItemsHelper
 			return 'item'
 		end
 	end
+
+	def all_tweets(group)
+		group.all? {|i| i.category == 'tweet'}
+	end
 end

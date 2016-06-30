@@ -182,20 +182,51 @@ a {
 	margin-right: 5px;
 }
 
-.tweet-image {
-	height: 177px;
-	background-color: #9ae8f4;
-	/*position: relative;*/
-	position: relative;
+.tweet-image-darken {
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 169px;
+	.tweet-info {
+		color: #ffffff;
+	}
+	.author a {
+		color: #ffffff;
+	}
 }
 
-.tweet-image a {
+.tweet-image-large-darken {
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 344px;
+	.tweet-info {
+		color: #ffffff;
+	}
+	.author a {
+		color: #ffffff;
+	}
+}
+
+.tweet-image {
+	height: 344px;
+	background-color: #9ae8f4;
+	position: relative;
+	background-size: cover;
+	background-position: center; 
+}
+
+.tweet-image-small {
+	height: 169px;
+	background-color: #9ae8f4;
+	position: relative;
+	margin-bottom: 6px;
+	background-size: cover;
+	background-position: center; 
+}
+
+.tweet-image a,
+.tweet-image-small a {
 	text-decoration: none;
 }
 
 .tweet-info {
-	/*position: absolute;*/
-	/*bottom: 0px;*/
 	padding-top: 5px;
 	padding-left: 7px;
 	padding-right: 7px;
@@ -203,6 +234,7 @@ a {
 
 .tweet-info .text {
 	font-size: 0.8em;
+	margin-top: -10px;
 }
 
 .author {
@@ -214,6 +246,5 @@ a {
 }
 
 .author a:hover {
-	color: #ffffff;
-	background-color: #000000;
+	text-decoration: underline;
 }
