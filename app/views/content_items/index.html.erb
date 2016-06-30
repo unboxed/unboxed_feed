@@ -36,21 +36,13 @@
 					<!-- put in partial -->
 					<% if item.category == "tweet" %>
 						<div class="item">
-							<% if item.image_url %>
-								<div class="tweet-image" style="background-image: url('<%= item.image_url %>');">
-								<div class="tweet-image-large-darken">
-							<% else %>
-								<div class="tweet-image">
-							<% end %>
+							<div class="tweet-image">
 								<div class="tweet-info">
 									<p class="category"><%= item.category.capitalize %></p>
 									<p class="text"><%= item.title.html_safe %></p>
 								</div>
 								<p class="author"><%= link_to "@#{item.author}", "https://twitter.com/#{item.author}" %></p>
 							</div>
-						<% if item.image_url %>
-							</div>
-						<% end %>
 						</div>
 					<% else %>
 						<div class="item">
