@@ -59,9 +59,6 @@ a {
 }
 
 .item:hover {
-	.item-image {
-		height: 195px;
-	}
 	.item-info {
 		height: 149px;
 	}
@@ -116,8 +113,12 @@ a {
 
 .item-image {
 	background-color: #8A2D8E;
-	height: 220px;
+	background: url('http://i1291.photobucket.com/albums/b548/grammccram/Screen%20Shot%202016-04-14%20at%2016.22.43_zpsvwitq5fo.png');
+	background-size: cover;
+	background-position: center; 
+	height: 344px;
 	margin-bottom: none;
+	position: relative;
 }
 
 .item-info {
@@ -126,7 +127,8 @@ a {
 	padding-top: 10px;
 	padding-left: 7px;
 	padding-right: 7px;
-	position: relative;
+	position: absolute;
+	bottom: 0px;
 }
 
 .item-info-top {
