@@ -38,6 +38,12 @@ a {
 	width: 85%;
 }
 
+@media (max-width: 480px) {
+	.feed {
+		width: 100%;
+	}
+}
+
 .item {
 	float: right;
 	width: 220px;
@@ -48,7 +54,7 @@ a {
 
 @media (max-width: 480px) {
 	.item {
-		width: 80%;
+		width: 100%;
 	}
 }
 
