@@ -1,0 +1,77 @@
+<div class="menu">
+	<p>
+		unboxed feed<br/>
+		<span class="large-text">admin</span>
+	</p>
+</div>
+<div class="feed">
+	<% @content_items.in_groups_of(2, false) do |group| %>
+		<% if all_tweets(group) %>
+			<!-- put in partial -->	
+			<div class="item">
+				<% group.each do |tweet| %>
+					<% if tweet.image_url %>
+						<div class="tweet-image-small" style="background-image: url('<%= tweet.image_url %>');">
+						<div class="tweet-image-darken">
+					<% else %>
+						<div class="tweet-image-small">
+					<% end %>
+							<div class="tweet-info">
+								<p class="category"><%= tweet.category.capitalize %></p>
+								<p class="text"><%= tweet.title.html_safe %></p>
+							</div>
+							<p class="author"><%= link_to "@#{tweet.author}", "https://twitter.com/#{tweet.author}" %></p>
+						</div>
+					<% if tweet.image_url %>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+			<!-- finish partial -->
+		<% else %>
+			<% group.each do |item| %>
+				<!-- put in partial -->
+				<% if item.category == "tweet" %>
+					<div class="item">
+						<div class="tweet-image">
+							<div class="tweet-info">
+								<p class="category"><%= item.category.capitalize %></p>
+								<p class="text"><%= item.title.html_safe %></p>
+							</div>
+							<p class="author"><%= link_to "@#{item.author}", "https://twitter.com/#{item.author}" %></p>
+						</div>
+					</div>
+				<% else %>
+					<div class="item">
+						<div class="item-image" id="<%= item.id %>">
+							<div class="edit" id="<%= item.id %>">Edit</div>
+							<div class="item-info">
+								<p class="category"><%= item.category.capitalize %></p>
+								<p class="title-trunc"><%= item.title.truncate_words(10) %></p>
+								<p class="title"><%= item.title.html_safe %></p>
+								<p class="tags">
+									<% item.tag_list.each do |tag| %>
+										<span class="tag">
+											<%= tag %>
+										</span>
+									<% end %>
+								</p>
+							</div>
+						</div>
+						<div class="edit-form" id="<%= item.id %>">
+							<div class="edit-black">
+								Edit
+								<span class="close" id="<%= item.id %>">x</span>
+							</div>
+							<% @item = ContentItem.find(item.id) %>
+							<%= form_for @item, url: {:controller => :content_items, :action => :update, :id => @item.id} do |i| %>
+								<%= i.submit %>
+							<% end %>
+						</div>
+					</div>
+				<% end %>
+				<!-- finish partial -->
+			<% end %>
+		<% end %>
+	<% end %>
+</div>

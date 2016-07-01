@@ -256,3 +256,44 @@ a {
 .author a:hover {
 	text-decoration: underline;
 }
+
+.edit {
+	font-size: 0.8em;
+	background-color: #ff0000;
+	color: #ffffff;
+	padding: 3px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.edit:hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.edit-form {
+	height: 344px;
+	background-color: #000000;
+	color: #ffffff;
+	z-index: 999;
+	display: none;
+}
+
+.edit-black {
+	font-size: 0.8em;
+	color: #ffffff;
+	padding: 4px;
+}
+
+.close {
+	float: right;
+	margin-right: 3px;
+	margin-top: -2px;
+}
+
+.close:hover {
+	color: #ff0000;
+	cursor:default;
+}

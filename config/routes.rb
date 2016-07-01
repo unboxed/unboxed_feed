@@ -4,4 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'content_items#index'
+
+  namespace :admin do
+		resources :content_items, only: [:index, :edit, :show, :update]
+	end
 end
