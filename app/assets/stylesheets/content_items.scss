@@ -113,9 +113,6 @@ a {
 
 .item-image {
 	background-color: #8A2D8E;
-	background: url('http://i1291.photobucket.com/albums/b548/grammccram/Screen%20Shot%202016-04-14%20at%2016.22.43_zpsvwitq5fo.png');
-	background-size: cover;
-	background-position: center; 
 	height: 344px;
 	margin-bottom: none;
 	position: relative;
@@ -279,6 +276,40 @@ a {
 	color: #ffffff;
 	z-index: 999;
 	display: none;
+}
+
+.edit-form label {
+	font-size: 0.8em;
+	display: block;
+}
+
+.edit-form form {
+	padding: 5px;
+	position: relative;
+	height: 90%;
+}
+
+.edit-form input {
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.edit-form input[type=submit] {
+	position: absolute;
+	bottom: -10px;
+	right: 5px;
+   	background-color: #ffffff;
+    border: none;
+    color: #000000;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+    	background-color: #efefef;
+    }
 }
 
 .edit-black {

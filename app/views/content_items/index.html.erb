@@ -46,7 +46,7 @@
 						</div>
 					<% else %>
 						<div class="item">
-							<div class="item-image">
+							<div class="item-image" style="<%= set_background_image(item) %>">
 								<div class="item-info">
 									<p class="category"><%= item.category.capitalize %></p>
 									<p class="title-trunc"><%= item.title.truncate_words(10) %></p>

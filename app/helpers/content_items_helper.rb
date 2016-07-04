@@ -11,4 +11,12 @@ module ContentItemsHelper
 	def all_tweets(group)
 		group.all? {|i| i.category == 'tweet'}
 	end
+
+	def set_background_image(item)
+		if item.image_url 
+			return "background: url(#{item.image_url}); background-size: cover; background-position: center;"
+		else 
+			return ""
+		end
+	end
 end

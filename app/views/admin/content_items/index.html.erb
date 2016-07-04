@@ -43,7 +43,7 @@
 					</div>
 				<% else %>
 					<div class="item">
-						<div class="item-image" id="<%= item.id %>">
+						<div class="item-image" id="<%= item.id %>" style="<%= set_background_image(item) %>">
 							<div class="edit" id="<%= item.id %>">Edit</div>
 							<div class="item-info">
 								<p class="category"><%= item.category.capitalize %></p>
@@ -65,7 +65,9 @@
 							</div>
 							<% @item = ContentItem.find(item.id) %>
 							<%= form_for @item, url: {:controller => :content_items, :action => :update, :id => @item.id} do |i| %>
-								<%= i.submit %>
+								<%= i.label :image_url %>
+								<%= i.text_field :image_url %>
+								<%= i.submit 'Update' %>
 							<% end %>
 						</div>
 					</div>
