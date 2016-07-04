@@ -45,7 +45,7 @@
 							</div>
 						</div>
 					<% else %>
-						<div class="item">
+						<div class="<%= item_class(item.size) %>">
 							<div class="item-image" style="<%= set_background_image(item) %>">
 								<div class="item-info">
 									<p class="category"><%= item.category.capitalize %></p>

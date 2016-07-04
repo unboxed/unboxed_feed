@@ -76,6 +76,10 @@ a {
 	height: 350px;
 	padding: 3px;
 	background-color: #efefef;
+
+	.item-info {
+		width: 440px;
+	}
 }
 
 .item-large {
@@ -280,7 +284,6 @@ a {
 
 .edit-form label {
 	font-size: 0.8em;
-	display: block;
 }
 
 .edit-form form {
@@ -290,9 +293,12 @@ a {
 }
 
 .edit-form input {
-	display: block;
 	margin-top: 5px;
 	margin-bottom: 10px;
+}
+
+.edit-form input[type=submit] {
+	display: inline-block;
 }
 
 .edit-form input[type=submit] {

@@ -24,6 +24,6 @@ class Admin::ContentItemsController < ApplicationController
   private
 
     def content_item_params
-      params.require(:content_item).permit(:image_url)
+      params.require(:content_item).permit(:image_url, :size)
     end
 end

@@ -42,7 +42,7 @@
 						</div>
 					</div>
 				<% else %>
-					<div class="item">
+					<div class="<%= item_class(item.size) %>">
 						<div class="item-image" id="<%= item.id %>" style="<%= set_background_image(item) %>">
 							<div class="edit" id="<%= item.id %>">Edit</div>
 							<div class="item-info">
@@ -66,7 +66,17 @@
 							<% @item = ContentItem.find(item.id) %>
 							<%= form_for @item, url: {:controller => :content_items, :action => :update, :id => @item.id} do |i| %>
 								<%= i.label :image_url %>
+								<br/>
 								<%= i.text_field :image_url %>
+								<br/>
+								<%= i.label :size %>
+								<br/>
+								<%= i.label :size, '1', :value => '1' %>
+								<%= i.radio_button :size, 1 %>
+								<%= i.label :size, '2', :value => '2' %>
+								<%= i.radio_button :size, 2 %>
+								<%= i.label :size, '3', :value => '3' %>
+								<%= i.radio_button :size, 3 %>
 								<%= i.submit 'Update' %>
 							<% end %>
 						</div>

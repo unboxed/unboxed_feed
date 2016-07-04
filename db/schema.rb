@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630093923) do
+ActiveRecord::Schema.define(version: 20160704111827) do
 
   create_table "content_items", force: :cascade do |t|
     t.string   "url"
     t.string   "title"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "category"
     t.text     "body"
     t.string   "image_url"
     t.string   "author"
     t.datetime "published_at"
+    t.integer  "size",         default: 1
   end
 
   create_table "taggings", force: :cascade do |t|
