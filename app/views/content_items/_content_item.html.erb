@@ -17,9 +17,11 @@
 				</div>
 			</div>
 			<div class="content-item__tags">
-				<div class="content-item__tag">
-					// grow your idea
-				</div>
+				<% item.tag_list.each do |tag| %>
+					<span class="content-item__tag">
+						// <%= tag.downcase %>
+					</span>
+				<% end %>
 			</div>
 		</div>
 	</div>
