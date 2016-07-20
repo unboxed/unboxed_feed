@@ -1,0 +1,52 @@
+.content-item {
+  border: 1px solid #E9E9E9;
+  margin-bottom: 5px;
+  overflow: auto;
+}
+
+.content-item__image {
+  height: 150px;
+}
+
+.content-item__textbox {
+  background-color: #FFFFFF;
+  padding: 15px 10px 10px 10px;
+}
+
+.content-item__text {
+  color: #0C0C0C;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.content-item__tags {
+  border-top: 1px solid #E9E9E9;
+  padding-top: 8px;
+  font-size: 10px;
+  color: #9A9A9A;
+}
+
+.content-item__item-title,
+.content-item__tweet-body {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.content-item__author {
+  margin-top: 6px;
+  margin-bottom: -16px;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.content-item a {
+  color: #000000;
+}
+
+.content-item__icon {
+  text-align: right;
+}
+
+.content-item__icon img {
+  height: 36px;
+}

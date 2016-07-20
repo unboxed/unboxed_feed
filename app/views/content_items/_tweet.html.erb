@@ -1,0 +1,18 @@
+<%= link_to tweet.url do %>
+	<div class="content-item content-item--tweet">
+		<div class="content-item__textbox">
+			<div class="content-item__text">
+				<p class="content-item__tweet-body"><%= tweet.title.html_safe %></p>
+				<p class="content-item__author"><%= link_to "@#{tweet.author}", "https://twitter.com/#{tweet.author}" %></p>
+				<div class="content-item__icon">
+					<%= image_tag 'twitter-icon' %> 
+				</div>
+			</div>
+			<div class="content-item__tags">
+				<div class="content-item__tag">
+					// grow your idea
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

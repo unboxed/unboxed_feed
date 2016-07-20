@@ -1,0 +1,38 @@
+.header {
+  text-align: center;
+  background-color: #ffffff;
+  height: 50vh;
+  position: relative;
+  border-bottom: 1px solid #E9E9E9;
+}
+
+.header__title {
+  width: 100px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.header__line {
+  height: 13vh;
+  border-right: 1px solid #EBEBEB;
+  width: 50%;
+}
+
+.header__hashtag {
+  font-size: 10px;
+  color: #7b7b7b;
+  border: 1px solid #EBEBEB;
+  padding: 4px 8px 5px 8px;
+}
+
+.header__quote-text {
+  margin: 30px 45px 0px 45px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.regular-text {
+  font-weight: 400;
+}

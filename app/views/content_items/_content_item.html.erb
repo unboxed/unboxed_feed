@@ -1,0 +1,26 @@
+<%= link_to item.url do %>
+	<div class="content-item">
+		<% if item.image_url %>
+			<div class="content-item__image" style="background-image: url('<%= item.image_url %>');">
+			</div>
+		<% end %>
+		<div class="content-item__textbox">
+			<div class="content-item__text">
+				<p class="content-item__item-title"><%= item.title.html_safe %></p>
+				<p class="content-item__author"><%= item.category %></p>
+				<div class="content-item__icon">
+					<% if item.category == 'blog' %>
+						<%= image_tag 'blog-icon' %>
+					<% else %>
+						<%= image_tag 'news-icon' %>
+					<% end %> 
+				</div>
+			</div>
+			<div class="content-item__tags">
+				<div class="content-item__tag">
+					// grow your idea
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
