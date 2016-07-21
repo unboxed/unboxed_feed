@@ -17,6 +17,24 @@
   border-bottom: 1px solid #E9E9E9;
 }
 
+.header__nav-icon img {
+  height: 30px;
+}
+
+.header__nav-icon--left {
+  float: left;
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+}
+
+.header__nav-icon--right {
+  float: right;
+  position: absolute;
+  bottom: 9px;
+  right: 10px;
+}
+
 .header__padding {
   height: 50px;
   display: none;
@@ -55,4 +73,8 @@
   left: 0;
   top: 0;
   width: 100%;
+}
+
+.header__title {
+  font-weight: 400;
 }

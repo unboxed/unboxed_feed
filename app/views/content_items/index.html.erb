@@ -1,13 +1,19 @@
-<header>
-	<%= render 'header' %>
-</header>
+<%= render 'side_nav' %>
 
-<div class="content-items">
-	<% @content_items.each do |item| %>
-		<% if item.category == "tweet" %>
-			<%= render 'tweet', tweet: item %>
-		<% else %>
-			<%= render 'content_item', item: item %>
+<div id="cover">
+</div>
+<div id="main">
+	<header>
+		<%= render 'header' %>
+	</header>
+
+	<div class="content-items">
+		<% @content_items.each do |item| %>
+			<% if item.category == "tweet" %>
+				<%= render 'tweet', tweet: item %>
+			<% else %>
+				<%= render 'content_item', item: item %>
+			<% end %>
 		<% end %>
-	<% end %>
+	</div>
 </div>

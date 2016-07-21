@@ -22,4 +22,22 @@ $(document).ready(function() {
 	    	padding.removeClass("header__padding--display-true");
 	  	}
 	});
+
 });
+
+function openNav() {
+	$("#side-nav").css('width', '250px');
+	$("#cover").fadeIn();
+	$("#cover").css('margin-left', '250px');
+	$(".side-nav__container").fadeIn();
+	$(".header__nav--sticky").fadeOut();
+}
+
+function closeNav() {
+	$(".side-nav__container").fadeOut(function() {
+		$("#side-nav").css('width', '0');
+		$("#cover").css('margin-left', '0');
+		$("#cover").fadeOut();
+		$(".header__nav--sticky").fadeIn();
+	});
+}

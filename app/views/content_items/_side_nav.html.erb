@@ -1,0 +1,15 @@
+<div id="side-nav" class="side-nav">
+	<div class="side-nav__container">
+		<div class="side-nav__filter-list">
+			<div class="side-nav__title">filter feed</div>
+			<% ActsAsTaggableOn::Tag.all.each do |tag| %>
+				<div class="side-nav__filter-tag">	
+					// <%= tag.name.downcase %>
+				</div>
+			<% end %>
+		</div>
+		<div class="side-nav__button">
+			<a href="javascript:void(0)" class="side-nav__close" onclick="closeNav()">done</a>
+		</div>
+	</div>
+</div>
