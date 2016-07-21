@@ -5,7 +5,7 @@
 }
 
 .header__container {
-  height: 300px;
+  height: 380px;
 }
 
 .header__nav {
@@ -15,6 +15,10 @@
   background-color: #ffffff;
   padding: 15px;
   border-bottom: 1px solid #E9E9E9;
+}
+
+.header__nav-icon {
+  display: none;
 }
 
 .header__nav-icon img {
@@ -76,5 +80,6 @@
 }
 
 .header__title {
+  margin-bottom: 8px;
   font-weight: 400;
 }
