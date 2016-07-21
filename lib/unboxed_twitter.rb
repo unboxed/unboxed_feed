@@ -16,6 +16,8 @@ module UnboxedTwitter
 			end
 
 			item = ContentItem.where(url: link).first_or_create(url: link, title: text, author: user.screen_name, published_at: created_at, category: 'tweet')
+			item.tag_list.add('twitter')
+			item.save
 
 			if tweet.media.first
 				image_url = tweet.media.first.media_url.to_s

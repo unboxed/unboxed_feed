@@ -12,7 +12,9 @@ module UnboxedNews
 			title = node.xpath('title').text
 			link = node.xpath('link/@href').text
 			time = DateTime.parse(node.xpath('published').text)
-			ContentItem.where(url: link).first_or_create(url: link, title: title, published_at: time, category: 'news')
+			item = ContentItem.where(url: link).first_or_create(url: link, title: title, published_at: time, category: 'news')
+			item.tag_list.add('news')
+			item.save
 		end
 	end
 end
