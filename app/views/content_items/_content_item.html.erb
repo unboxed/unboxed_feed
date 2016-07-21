@@ -1,4 +1,4 @@
-<%= link_to item.url do %>
+<%= link_to item.url, :target => "_blank" do %>
 	<div class="content-item">
 		<% if item.image_url %>
 			<div class="content-item__image" style="background-image: url('<%= item.image_url %>'); background-position: center; background-size: cover;">
