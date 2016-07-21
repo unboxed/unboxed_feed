@@ -1,21 +1,33 @@
 .header {
   text-align: center;
   background-color: #ffffff;
-  height: 50vh;
   position: relative;
+}
+
+.header__container {
+  height: 300px;
+}
+
+.header__nav {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  background-color: #ffffff;
+  padding: 15px;
   border-bottom: 1px solid #E9E9E9;
 }
 
-.header__title {
-  width: 100px;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  margin-left: -50px;
+.header__padding {
+  height: 50px;
+  display: none;
+}
+
+.header__padding--display-true {
+  display: block;
 }
 
 .header__line {
-  height: 13vh;
+  height: 100px;
   border-right: 1px solid #EBEBEB;
   width: 50%;
 }
@@ -30,9 +42,17 @@
 .header__quote-text {
   margin: 30px 45px 0px 45px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 22px;
 }
 
 .regular-text {
   font-weight: 400;
+}
+
+.header__nav--sticky { 
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
