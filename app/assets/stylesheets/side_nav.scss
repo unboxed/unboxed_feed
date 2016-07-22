@@ -29,13 +29,29 @@
 }
 
 .side-nav__button {
-    margin-left: 15px;
     margin-top: 20px;
     font-size: 14px;
+    display: inline-block;
+}
+
+.side-nav__button input[type='submit'] {
+    font-size: 14px;
+    color: #719DC8;
+    font-weight: 300;
+    border: none;
+    background: none;
+
+    &:hover {
+        color: #000000;
+    }
 }
 
 .side-nav__button a {
     color: #719DC8;
+
+    &:hover {
+        color: #000000;
+    }
 }
 
 #main {

@@ -12,11 +12,13 @@
 					</div>
 				<% end %>
 				<%= hidden_field 'temp', 'true' %>
-				<%= submit_tag "complete" %>
+				<div class="side-nav__button">
+					<%= submit_tag "filter" %>
+				</div>
+				<div class="side-nav__button">
+					<a href="javascript:void(0)" class="side-nav__close" onclick="closeNav()">close</a>
+				</div>
 			<% end %>
-		</div>
-		<div class="side-nav__button">
-			<a href="javascript:void(0)" class="side-nav__close" onclick="closeNav()">close</a>
 		</div>
 	</div>
 </div>
