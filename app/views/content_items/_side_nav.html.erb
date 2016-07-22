@@ -7,7 +7,7 @@
 					<div class="side-nav__filter-tag">	
 						// <%= tag.name.downcase %>
 						<div class="side-nav__checkbox">
-							<%= check_box_tag :tag, tag.name, :class => "tag-check" %>
+							<%= check_box_tag 'tags[]', tag.name, check_box_tag_selected?(tag) %>
 						</div>
 					</div>
 				<% end %>

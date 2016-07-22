@@ -23,4 +23,12 @@ module ContentItemsHelper
 			return ""
 		end
 	end
+
+	def check_box_tag_selected?(tag)
+		if params[:tags]
+			return params[:tags].include? tag.name
+		else
+			return true
+		end
+	end
 end
