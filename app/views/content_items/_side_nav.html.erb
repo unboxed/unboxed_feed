@@ -2,14 +2,20 @@
 	<div class="side-nav__container">
 		<div class="side-nav__filter-list">
 			<div class="side-nav__title">filter feed</div>
-			<% ActsAsTaggableOn::Tag.all.each do |tag| %>
-				<div class="side-nav__filter-tag">	
-					// <%= tag.name.downcase %>
-				</div>
+			<%= form_for :content_item, :url => {action: "index"}, :html => {:method => :get} do |i| %>
+				<% ActsAsTaggableOn::Tag.all.each do |tag| %>
+					<div class="side-nav__filter-tag">	
+						// <%= tag.name.downcase %>
+						<div class="side-nav__checkbox">
+							<%= check_box_tag :tag, tag.name, :class => "tag-check" %>
+						</div>
+					</div>
+				<% end %>
+				<%= submit_tag "complete" %>
 			<% end %>
 		</div>
 		<div class="side-nav__button">
-			<a href="javascript:void(0)" class="side-nav__close" onclick="closeNav()">done</a>
+			<a href="javascript:void(0)" class="side-nav__close" onclick="closeNav()">close</a>
 		</div>
 	</div>
 </div>
