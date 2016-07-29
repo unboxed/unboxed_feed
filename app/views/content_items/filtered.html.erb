@@ -1,9 +1,14 @@
 <div class="content-items">
-	<% @content_items.each do |item| %>
-		<% if item.category == "tweet" %>
-			<%= render 'tweet', tweet: item %>
-		<% else %>
-			<%= render 'content_item', item: item %>
+	<div class="grid">
+		<div class="grid-sizer"></div>
+		<% @content_items.each do |item| %>
+			<div class="grid-item">
+				<% if item.category == "tweet" %>
+					<%= render 'tweet', tweet: item %>
+				<% else %>
+					<%= render 'content_item', item: item %>
+				<% end %>
+			</div>
 		<% end %>
-	<% end %>
+	</div>
 </div>

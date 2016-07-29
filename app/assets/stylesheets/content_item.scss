@@ -54,3 +54,21 @@
 .content-item__icon img {
   height: 36px;
 }
+
+.grid-sizer,
+.grid-item { 
+  width: 33%;
+}
+
+@media (max-width: 1024px) {
+  .grid-sizer,
+  .grid-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-item {
+    width: 100%;
+  }
+}

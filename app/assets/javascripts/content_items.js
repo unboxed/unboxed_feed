@@ -17,7 +17,14 @@ $(document).ready(function() {
 		  success: function(resp) {
 		  	$('#content-items').fadeOut(function() {
 		  		$('#content-items').html(resp).fadeIn(function() {
-		  			closeNav();	
+		  			closeNav();
+	  				$('.grid').masonry({
+					  // options
+					  itemSelector: '.grid-item',
+					  columnWidth: '.grid-sizer',
+					  percentPosition: true,
+					  originLeft: false
+					});	
 		  		});
 		  	});
 		  },
@@ -40,6 +47,14 @@ $(document).ready(function() {
 	    	padding.removeClass("header__padding--display-true");
 	    	$(".header__nav-icon").fadeOut();
 	  	}
+	});
+
+	$('.grid').masonry({
+	  // options
+	  itemSelector: '.grid-item',
+	  columnWidth: '.grid-sizer',
+	  percentPosition: true,
+	  originLeft: false
 	});
 });
 
