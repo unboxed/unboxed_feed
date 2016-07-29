@@ -16,7 +16,9 @@ $(document).ready(function() {
 		  url: '/content_items/filtered?' + $('form').serialize(),
 		  success: function(resp) {
 		  	$('#content-items').fadeOut(function() {
-		  		$('#content-items').html(resp).fadeIn();
+		  		$('#content-items').html(resp).fadeIn(function() {
+		  			closeNav();	
+		  		});
 		  	});
 		  },
 		  error: function() {
@@ -29,7 +31,7 @@ $(document).ready(function() {
 	var padding = $('.header__padding'); 
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > 380) {  
+		if ($(this).scrollTop() > 450) {  
 	    	nav.addClass("header__nav--sticky");
 	    	padding.addClass("header__padding--display-true");
 	    	$(".header__nav-icon").fadeIn();

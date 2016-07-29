@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721105607) do
+ActiveRecord::Schema.define(version: 20160729134754) do
 
   create_table "content_items", force: :cascade do |t|
     t.string   "url"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20160721105607) do
   create_table "quotes", force: :cascade do |t|
     t.string "body"
     t.string "author"
+    t.string "image_url"
+    t.string "attribution"
   end
 
   create_table "taggings", force: :cascade do |t|

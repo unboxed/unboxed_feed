@@ -5,7 +5,7 @@
 }
 
 .header__container {
-  height: 380px;
+  height: 450px;
 }
 
 .header__nav {
@@ -15,6 +15,14 @@
   background-color: #ffffff;
   padding: 15px;
   border-bottom: 1px solid #E9E9E9;
+}
+
+.header__image {
+  background-image: url('<%= image_path 'gorillaz' %>');
+  background-position: center;
+  background-size: cover;
+  height: 280px;
+  position: relative;
 }
 
 .header__nav-icon {
@@ -50,21 +58,34 @@
 
 .header__line {
   height: 100px;
-  border-right: 1px solid #dadada;
+  border-right: 1px solid #ffffff;
   width: 50%;
 }
 
 .header__hashtag {
   font-size: 11px;
-  color: #7b7b7b;
-  border: 1px solid #dadada;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #ffffff;
   padding: 4px 8px 5px 8px;
 }
 
+.header__quote-attribution {
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
 .header__quote-text {
-  margin-top: 35px;
-  font-size: 17px;
+  margin-top: 16px;
+  margin-bottom: 15px;
+  font-size: 16px;
   line-height: 21px;
+}
+
+.header__quote-author {
+  font-size: 12px;
+  color: #9A9A9A;
 }
 
 .header__quote-text b {
@@ -82,4 +103,13 @@
 .header__title {
   margin-bottom: 8px;
   font-weight: 400;
+}
+
+.top {
+    height: 0;
+    border-width: 0 0 100px 100vw;
+    border-style: solid;
+    border-color:transparent #fff #fff transparent;
+    position: absolute;
+    bottom: -1px;
 }

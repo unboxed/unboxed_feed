@@ -1,9 +1,15 @@
 <div class="header">
 	<div class="header__container">	
-		<div class="header__quote">
+		<div class="header__image" style="background-image: url('<%= @quote.image_url %>')">
 			<div class="header__line"></div>
-			<span class="header__hashtag">#unboxed thinking</span>
+			<span class="header__hashtag">#unboxed thinkers</span>
+			<div class="top">
+			</div>
+		</div>
+		<div class="header__quote">
+			<div class="header__quote-attribution"><%= @quote.attribution %></div>
 			<div class="header__quote-text"><%= @quote.body.html_safe %></div>
+			<div class="header__quote-author"><%= @quote.author %></div>
 		</div>
 	</div>
 	<div class="header__padding"></div>
