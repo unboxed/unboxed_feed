@@ -6,6 +6,7 @@
 
 .header__container {
   height: 450px;
+  display: none;
 }
 
 .header__nav {
@@ -113,3 +114,10 @@
     position: absolute;
     bottom: -1px;
 }
+
+@media (max-width: 1024px) {
+  .header__container {
+    display: block;
+  }
+}
+

@@ -38,7 +38,7 @@ $(document).ready(function() {
 	var padding = $('.header__padding'); 
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > 450) {  
+		if ($(this).scrollTop() > $('.header__nav').position().top) {  
 	    	nav.addClass("header__nav--sticky");
 	    	padding.addClass("header__padding--display-true");
 	    	$(".header__nav-icon").fadeIn();
