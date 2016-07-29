@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'content_items#index'
 
+  get 'content_items/filtered' => 'content_items#filtered'
+
   namespace :admin do
 		resources :content_items, only: [:index, :edit, :show, :update]
 	end

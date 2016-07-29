@@ -10,6 +10,21 @@ $(document).ready(function() {
 		});
 	});
 
+	$("#filter_button").click(function() {
+		$.ajax({
+		  type: 'GET',
+		  url: '/content_items/filtered?' + $('form').serialize(),
+		  success: function(resp) {
+		  	$('#content-items').fadeOut(function() {
+		  		$('#content-items').html(resp).fadeIn();
+		  	});
+		  },
+		  error: function() {
+
+		  }
+		});
+	});
+
 	var nav = $('.header__nav');
 	var padding = $('.header__padding'); 
 
@@ -24,7 +39,6 @@ $(document).ready(function() {
 	    	$(".header__nav-icon").fadeOut();
 	  	}
 	});
-
 });
 
 function openNav() {

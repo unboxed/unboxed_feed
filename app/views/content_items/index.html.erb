@@ -7,13 +7,7 @@
 		<%= render 'header' %>
 	</header>
 
-	<div class="content-items">
-		<% @content_items.each do |item| %>
-			<% if item.category == "tweet" %>
-				<%= render 'tweet', tweet: item %>
-			<% else %>
-				<%= render 'content_item', item: item %>
-			<% end %>
-		<% end %>
+	<div id="content-items">
+		<%= render 'content_items' %>
 	</div>
 </div>

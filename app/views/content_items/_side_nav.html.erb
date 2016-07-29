@@ -2,7 +2,7 @@
 	<div class="side-nav__container">
 		<div class="side-nav__filter-list">
 			<div class="side-nav__title">filter feed</div>
-			<%= form_for :content_item, :url => {action: "index"}, :html => {:method => :get} do |i| %>
+			<%= form_for :content_item, :url => {action: "index"}, :html => {:method => :get, :remote => :true } do |i| %>
 				<% ActsAsTaggableOn::Tag.all.each do |tag| %>
 					<div class="side-nav__filter-tag">	
 						// <%= tag.name.downcase %>
@@ -13,7 +13,7 @@
 				<% end %>
 				<%= hidden_field 'temp', 'true' %>
 				<div class="side-nav__button">
-					<%= submit_tag "filter" %>
+					<%= submit_tag "filter", :id => 'filter_button' %>
 				</div>
 				<div class="side-nav__button">
 					<a href="javascript:void(0)" class="side-nav__close" onclick="closeNav()">close</a>

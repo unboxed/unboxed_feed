@@ -10,4 +10,16 @@ class ContentItemsController < ApplicationController
 		end
 		@quote = Quote.order("RANDOM()").first
 	end
+
+	def filtered
+		if params[:tags]
+			@content_items = ContentItem.tagged_with(params[:tags], :any => true).order(published_at: :desc)
+		elsif params[:temp]
+			@content_items = [];
+			params[:tags] = [];
+		else
+			@content_items = ContentItem.order(published_at: :desc)
+		end
+		render :layout => false
+	end
 end
