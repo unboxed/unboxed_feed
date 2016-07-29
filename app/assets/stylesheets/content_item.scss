@@ -55,6 +55,28 @@
   height: 36px;
 }
 
+.grid {
+  width: 80%;
+  float: right;
+}
+
+.side-bar-desktop {
+  width: 20%;
+  float: left;
+}
+
+@media (max-width: 1024px) {
+  .side-bar-desktop {
+    width: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    width: 100%;
+  }
+}
+
 .grid-sizer,
 .grid-item { 
   width: 33%;

@@ -1,4 +1,20 @@
 <div class="content-items">
+	<div class="side-bar-desktop">
+		<%= form_for :content_item, :url => {action: "index"}, :html => {:method => :get, :remote => :true } do |i| %>
+			<% ActsAsTaggableOn::Tag.all.each do |tag| %>
+				<div class="side-nav__filter-tag">	
+					// <%= tag.name.downcase %>
+					<div class="side-nav__checkbox">
+						<%= check_box_tag 'tags[]', tag.name, check_box_tag_selected?(tag) %>
+					</div>
+				</div>
+			<% end %>
+			<%= hidden_field 'temp', 'true' %>
+			<div class="side-nav__button">
+				<%= submit_tag "filter", :id => 'filter_button_desktop' %>
+			</div>
+		<% end %>
+	</div>
 	<div class="grid">
 		<div class="grid-sizer"></div>
 		<% @content_items.each do |item| %>

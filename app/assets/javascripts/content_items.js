@@ -35,6 +35,31 @@ $(document).ready(function() {
 		});
 	});
 
+	$("#filter_button_desktop").click(function() {
+		$.ajax({
+		  type: 'GET',
+		  url: '/content_items/filtered?' + $('.side-bar-desktop form').serialize(),
+		  success: function(resp) {
+		  	$('#content-items').fadeOut(function() {
+		  		$('#content-items').html(resp).fadeIn(function() {
+		  			closeNav();
+
+	  				$('.grid').masonry({
+					  // options
+					  itemSelector: '.grid-item',
+					  columnWidth: '.grid-sizer',
+					  percentPosition: true,
+					  originLeft: false
+					});	
+		  		});
+		  	});
+		  },
+		  error: function() {
+
+		  }
+		});
+	});
+
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > $('.header__nav').position().top) {  
 			addStickyHeader();
