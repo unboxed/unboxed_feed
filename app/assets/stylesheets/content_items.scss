@@ -13,8 +13,14 @@ body {
 .content-items {
 	background-color: #F4F4F4;
 	width: 100%;
-	padding: 8px 8px 50vh 8px;
+	padding: 0 8px 50vh 8px;
 	float: right;
+}
+
+@media (min-width: 1024px) {
+	.content-items {
+		padding-top: 8px;
+	}
 }
 
 a {

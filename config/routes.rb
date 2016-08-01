@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   get 'content_items/filtered' => 'content_items#filtered'
 
-  namespace :admin do
+  	namespace :admin do
 		resources :content_items, only: [:index, :edit, :show, :update]
+		resources :quotes, only: [:index, :edit,:show, :update]
 	end
 end
