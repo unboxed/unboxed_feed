@@ -15,6 +15,7 @@
   height: 60px;
   background-color: #F4F4F4;
   padding: 20px;
+  position: relative;
 }
 
 .header__title {
@@ -26,6 +27,7 @@
   background-size: cover;
   height: 240px;
   position: relative;
+  top: 210px;
 }
 
 .header__nav-icon {
@@ -75,6 +77,14 @@
 
 .header__quote {
   height: 210px;
+  position: fixed;
+  width: 100%;
+}
+
+.parallax-fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .header__quote-attribution {

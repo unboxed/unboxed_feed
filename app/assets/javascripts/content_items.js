@@ -61,10 +61,20 @@ $(document).ready(function() {
 	});
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > $('.header__nav').position().top) {  
-			addStickyHeader();
+		if ($(window).width() < 1024) {
+			if ($(this).scrollTop() > 450) {  
+				addStickyHeader();
+		  	} else {
+		  		removeStickyHeader();
+		  	}
+		}
+		
+	  	if($(this).scrollTop() > 210) {
+	  		$('.header__quote').hide();
+	  		$('.header__image').addClass('parallax-fixed');
 	  	} else {
-	  		removeStickyHeader();
+	  		$('.header__quote').show();
+	  		$('.header__image').removeClass('parallax-fixed');
 	  	}
 	});
 
