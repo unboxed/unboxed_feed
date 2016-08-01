@@ -1,0 +1,8 @@
+<% @quotes.each do |quote| %>
+	<div class="admin-quote">
+		<div class="admin-quote__info">
+			<%= quote.id %>. <%= quote.body %>, <%= quote.attribution %>
+			// <%= link_to 'Edit', edit_admin_quote_path(quote.id) %>
+		</div>
+	</div>
+<% end %>

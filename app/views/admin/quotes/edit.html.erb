@@ -1,0 +1,28 @@
+<div class="admin-quote-form">
+	<%= link_to 'Back', admin_quotes_path %>
+	<%= form_for @quote, url: {:controller => :quotes, :action => :update, :id => @quote.id} do |i| %>
+		<img src="<%= @quote.image_url %>" style="height: 100px;">
+		<br/>
+		<%= i.label :image_url %>
+		<br/>
+		<%= i.text_field :image_url %>
+		<br/>
+		<%= i.label :body %>
+		<br/>
+		<%= i.text_field :body %>
+		<br/>
+		<%= i.label :attribution %>
+		<br/>
+		<%= i.text_field :attribution %>
+		<br/>
+		<%= i.label :background_colour %>
+		<br/>
+		<%= i.text_field :background_colour %>
+		<br/>		
+		<%= i.label :text_colour %>
+		<br/>
+		<%= i.text_field :text_colour %>
+		<br/>
+		<%= i.submit 'Update' %>
+	<% end %>
+</div>
